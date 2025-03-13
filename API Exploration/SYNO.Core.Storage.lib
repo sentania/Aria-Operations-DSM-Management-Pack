@@ -1,0 +1,692 @@
+{
+    "SYNO.Core.Storage.Disk": {
+        "allowUser": [
+            "admin.local",
+            "admin.ldap",
+            "admin.domain"
+        ],
+        "appPriv": "",
+        "authLevel": 1,
+        "disableSocket": false,
+        "lib": "StorageManager/libStorage.so",
+        "maxVersion": 1,
+        "methods": {
+            "1": [
+                {
+                    "list": {
+                        "allowDemo": true,
+                        "cgiProcReusable": true,
+                        "grantByDefault": true,
+                        "systemdSlice": ""
+                    }
+                },
+                {
+                    "get_smart_info": {
+                        "allowDemo": true,
+                        "cgiProcReusable": true,
+                        "grantByDefault": true,
+                        "systemdSlice": ""
+                    }
+                },
+                {
+                    "do_smart_test": {
+                        "cgiProcReusable": true,
+                        "grantByDefault": true,
+                        "systemdSlice": ""
+                    }
+                },
+                {
+                    "get_smart_test_log": {
+                        "allowDemo": true,
+                        "cgiProcReusable": true,
+                        "grantByDefault": true,
+                        "systemdSlice": ""
+                    }
+                },
+                {
+                    "do_performance_test": {
+                        "cgiProcReusable": true,
+                        "grantByDefault": true,
+                        "systemdSlice": ""
+                    }
+                },
+                {
+                    "stop_performance_test": {
+                        "cgiProcReusable": true,
+                        "grantByDefault": true,
+                        "systemdSlice": ""
+                    }
+                },
+                {
+                    "get_performance_test_status": {
+                        "cgiProcReusable": true,
+                        "grantByDefault": true,
+                        "systemdSlice": ""
+                    }
+                },
+                {
+                    "get_performance_test_log": {
+                        "cgiProcReusable": true,
+                        "grantByDefault": true,
+                        "systemdSlice": ""
+                    }
+                },
+                {
+                    "get_performance_test_info": {
+                        "cgiProcReusable": true,
+                        "grantByDefault": true,
+                        "systemdSlice": ""
+                    }
+                },
+                {
+                    "do_adv_test": {
+                        "allowDemo": true,
+                        "cgiProcReusable": true,
+                        "grantByDefault": true,
+                        "systemdSlice": ""
+                    }
+                },
+                {
+                    "get_adv_test_log": {
+                        "allowDemo": true,
+                        "cgiProcReusable": true,
+                        "grantByDefault": true,
+                        "systemdSlice": ""
+                    }
+                },
+                {
+                    "export_test_log": {
+                        "allowDemo": true,
+                        "allowDownload": true,
+                        "cgiProcReusable": true,
+                        "grantByUser": false,
+                        "grantable": true,
+                        "systemdSlice": ""
+                    }
+                },
+                {
+                    "export_test_log_content": {
+                        "allowDemo": true,
+                        "allowDownload": true,
+                        "cgiProcReusable": true,
+                        "grantByUser": false,
+                        "grantable": true,
+                        "systemdSlice": ""
+                    }
+                },
+                {
+                    "get_synoblock": {
+                        "allowDemo": true,
+                        "cgiProcReusable": true,
+                        "grantByDefault": true,
+                        "systemdSlice": ""
+                    }
+                },
+                {
+                    "get_disk_led_status": {
+                        "allowDemo": true,
+                        "cgiProcReusable": true,
+                        "grantByUser": false,
+                        "grantable": true,
+                        "systemdSlice": ""
+                    }
+                },
+                {
+                    "set_disk_led_status": {
+                        "allowDemo": true,
+                        "cgiProcReusable": true,
+                        "grantByUser": false,
+                        "grantable": true,
+                        "systemdSlice": ""
+                    }
+                },
+                {
+                    "test_deactivate_disk": {
+                        "allowDemo": true,
+                        "cgiProcReusable": true,
+                        "grantByUser": false,
+                        "grantable": true,
+                        "systemdSlice": ""
+                    }
+                },
+                {
+                    "deactivate_disk": {
+                        "allowDemo": true,
+                        "cgiProcReusable": true,
+                        "grantByUser": false,
+                        "grantable": true,
+                        "systemdSlice": ""
+                    }
+                },
+                {
+                    "wcache_get": {
+                        "allowDemo": true,
+                        "cgiProcReusable": true,
+                        "grantByUser": false,
+                        "grantable": true,
+                        "systemdSlice": ""
+                    }
+                },
+                {
+                    "wcache_set": {
+                        "allowDemo": true,
+                        "cgiProcReusable": true,
+                        "grantByUser": false,
+                        "grantable": true,
+                        "systemdSlice": ""
+                    }
+                },
+                {
+                    "disk_test_log_get": {
+                        "allowDemo": true,
+                        "cgiProcReusable": true,
+                        "grantByUser": false,
+                        "grantable": true,
+                        "systemdSlice": ""
+                    }
+                },
+                {
+                    "disk_health_prediction_log_get": {
+                        "allowDemo": true,
+                        "cgiProcReusable": true,
+                        "grantByUser": false,
+                        "grantable": true,
+                        "systemdSlice": ""
+                    }
+                },
+                {
+                    "get_wdda_test_result": {
+                        "allowDemo": true,
+                        "cgiProcReusable": true,
+                        "grantByUser": false,
+                        "grantable": true,
+                        "systemdSlice": ""
+                    }
+                },
+                {
+                    "disk_partition_rescan": {
+                        "cgiProcReusable": true,
+                        "grantByDefault": true,
+                        "systemdSlice": ""
+                    }
+                },
+                {
+                    "disks_info_get": {
+                        "allowDemo": true,
+                        "cgiProcReusable": true,
+                        "grantByUser": false,
+                        "grantable": true,
+                        "systemdSlice": ""
+                    }
+                },
+                {
+                    "upload_offlinekit": {
+                        "allowUpload": true,
+                        "cgiProcReusable": true,
+                        "grantByUser": false,
+                        "grantable": true,
+                        "systemdSlice": ""
+                    }
+                },
+                {
+                    "get_offlinekit_ver": {
+                        "cgiProcReusable": true,
+                        "grantByUser": false,
+                        "grantable": true,
+                        "systemdSlice": ""
+                    }
+                },
+                {
+                    "list_detail": {
+                        "cgiProcReusable": true,
+                        "grantByUser": false,
+                        "grantable": true,
+                        "systemdSlice": ""
+                    }
+                },
+                {
+                    "load_local_info": {
+                        "allowTimeout": true,
+                        "cgiProcReusable": true,
+                        "grantByDefault": true,
+                        "systemdSlice": ""
+                    }
+                },
+                {
+                    "load_info": {
+                        "allowTimeout": true,
+                        "cgiProcReusable": true,
+                        "grantByDefault": true,
+                        "systemdSlice": ""
+                    }
+                },
+                {
+                    "emit_info": {
+                        "allowTimeout": true,
+                        "cgiProcReusable": true,
+                        "grantByDefault": true,
+                        "systemdSlice": ""
+                    }
+                },
+                {
+                    "control_local_sofs_daemon": {
+                        "allowTimeout": true,
+                        "cgiProcReusable": true,
+                        "grantByDefault": true,
+                        "systemdSlice": ""
+                    }
+                },
+                {
+                    "control_sofs_daemon": {
+                        "allowTimeout": true,
+                        "cgiProcReusable": true,
+                        "grantByDefault": true,
+                        "systemdSlice": ""
+                    }
+                },
+                {
+                    "health_report_get": {
+                        "cgiProcReusable": true,
+                        "grantByDefault": true,
+                        "systemdSlice": ""
+                    }
+                },
+                {
+                    "health_record_update": {
+                        "cgiProcReusable": true,
+                        "grantByDefault": true,
+                        "systemdSlice": ""
+                    }
+                },
+                {
+                    "check_ui_open": {
+                        "allowTimeout": true,
+                        "cgiProcReusable": true,
+                        "grantByDefault": true,
+                        "systemdSlice": ""
+                    }
+                },
+                {
+                    "reset_metadata": {
+                        "allowDemo": true,
+                        "cgiProcReusable": true,
+                        "grantByUser": false,
+                        "grantable": true,
+                        "systemdSlice": ""
+                    }
+                }
+            ]
+        },
+        "minVersion": 1,
+        "priority": 0,
+        "priorityAdj": 0,
+        "runAs": "system",
+        "socket": "",
+        "socketConnTimeout": 600
+    },
+    "SYNO.Core.Storage.Disk.FWUpgrade": {
+        "allowUser": [
+            "admin.local",
+            "admin.ldap",
+            "admin.domain"
+        ],
+        "appPriv": "",
+        "authLevel": 1,
+        "disableSocket": false,
+        "lib": "StorageManager/libStorage.so",
+        "maxVersion": 1,
+        "methods": {
+            "1": [
+                {
+                    "list_drive": {
+                        "allowDemo": true,
+                        "cgiProcReusable": true,
+                        "grantByUser": false,
+                        "grantable": true,
+                        "systemdSlice": ""
+                    }
+                },
+                {
+                    "list_drive_group": {
+                        "allowDemo": true,
+                        "cgiProcReusable": true,
+                        "grantByUser": false,
+                        "grantable": true,
+                        "systemdSlice": ""
+                    }
+                },
+                {
+                    "prepare": {
+                        "allowDemo": true,
+                        "cgiProcReusable": true,
+                        "grantByUser": false,
+                        "grantable": true,
+                        "systemdSlice": ""
+                    }
+                },
+                {
+                    "get_latest_auto_upgrade_result": {
+                        "allowDemo": true,
+                        "cgiProcReusable": true,
+                        "grantByUser": false,
+                        "grantable": true,
+                        "systemdSlice": ""
+                    }
+                },
+                {
+                    "prepare_group": {
+                        "allowDemo": true,
+                        "cgiProcReusable": true,
+                        "grantByUser": false,
+                        "grantable": true,
+                        "systemdSlice": ""
+                    }
+                },
+                {
+                    "get_upgrade_method": {
+                        "allowDemo": true,
+                        "cgiProcReusable": true,
+                        "grantByUser": false,
+                        "grantable": true,
+                        "systemdSlice": ""
+                    }
+                },
+                {
+                    "start_upgrade": {
+                        "allowDemo": true,
+                        "cgiProcReusable": true,
+                        "grantByUser": false,
+                        "grantable": true,
+                        "systemdSlice": ""
+                    }
+                },
+                {
+                    "get_firm_path": {
+                        "allowDemo": true,
+                        "cgiProcReusable": true,
+                        "grantByUser": false,
+                        "grantable": true,
+                        "systemdSlice": ""
+                    }
+                },
+                {
+                    "upgrade": {
+                        "allowDemo": true,
+                        "cgiProcReusable": true,
+                        "grantByUser": false,
+                        "grantable": true,
+                        "systemdSlice": ""
+                    }
+                },
+                {
+                    "defer_upgrade": {
+                        "allowDemo": true,
+                        "cgiProcReusable": true,
+                        "grantByUser": false,
+                        "grantable": true,
+                        "systemdSlice": ""
+                    }
+                },
+                {
+                    "poll": {
+                        "allowDemo": true,
+                        "cgiProcReusable": true,
+                        "grantByUser": false,
+                        "grantable": true,
+                        "systemdSlice": ""
+                    }
+                },
+                {
+                    "check_continue": {
+                        "allowDemo": true,
+                        "cgiProcReusable": true,
+                        "grantByUser": false,
+                        "grantable": true,
+                        "systemdSlice": ""
+                    }
+                },
+                {
+                    "get_summary": {
+                        "allowDemo": true,
+                        "cgiProcReusable": true,
+                        "grantByUser": false,
+                        "grantable": true,
+                        "systemdSlice": ""
+                    }
+                },
+                {
+                    "cancel_send_notification": {
+                        "allowDemo": true,
+                        "cgiProcReusable": true,
+                        "grantByUser": false,
+                        "grantable": true,
+                        "systemdSlice": ""
+                    }
+                },
+                {
+                    "cancel_auto_launch": {
+                        "allowDemo": true,
+                        "cgiProcReusable": true,
+                        "grantByUser": false,
+                        "grantable": true,
+                        "systemdSlice": ""
+                    }
+                },
+                {
+                    "send_notification": {
+                        "allowDemo": true,
+                        "cgiProcReusable": true,
+                        "grantByUser": false,
+                        "grantable": true,
+                        "systemdSlice": ""
+                    }
+                },
+                {
+                    "send_notification_group": {
+                        "allowDemo": true,
+                        "cgiProcReusable": true,
+                        "grantByUser": false,
+                        "grantable": true,
+                        "systemdSlice": ""
+                    }
+                }
+            ]
+        },
+        "minVersion": 1,
+        "priority": 0,
+        "priorityAdj": 0,
+        "runAs": "system",
+        "socket": "",
+        "socketConnTimeout": 600
+    },
+    "SYNO.Core.Storage.Pool": {
+        "allowUser": [
+            "admin.local",
+            "admin.ldap",
+            "admin.domain"
+        ],
+        "appPriv": "",
+        "authLevel": 1,
+        "disableSocket": false,
+        "lib": "StorageManager/libStorage.so",
+        "maxVersion": 1,
+        "methods": {
+            "1": [
+                {
+                    "list": {
+                        "actionPrivileges": [
+                            "shared_folder"
+                        ],
+                        "allowDemo": true,
+                        "cgiProcReusable": true,
+                        "grantByDefault": true,
+                        "systemdSlice": ""
+                    }
+                }
+            ]
+        },
+        "minVersion": 1,
+        "priority": 0,
+        "priorityAdj": 0,
+        "runAs": "system",
+        "socket": "",
+        "socketConnTimeout": 600
+    },
+    "SYNO.Core.Storage.Volume": {
+        "allowUser": [
+            "admin.local",
+            "admin.ldap",
+            "admin.domain"
+        ],
+        "appPriv": "",
+        "authLevel": 1,
+        "disableSocket": false,
+        "lib": "StorageManager/libStorage.so",
+        "maxVersion": 1,
+        "methods": {
+            "1": [
+                {
+                    "list": {
+                        "actionPrivileges": [
+                            "shared_folder",
+                            "directory_account",
+                            "local_account",
+                            "service"
+                        ],
+                        "allowDemo": true,
+                        "cgiProcReusable": true,
+                        "grantByDefault": true,
+                        "systemdSlice": ""
+                    }
+                },
+                {
+                    "get": {
+                        "actionPrivileges": [
+                            "shared_folder"
+                        ],
+                        "allowDemo": true,
+                        "cgiProcReusable": true,
+                        "grantByDefault": true,
+                        "systemdSlice": ""
+                    }
+                },
+                {
+                    "conf_get": {
+                        "allowDemo": true,
+                        "cgiProcReusable": true,
+                        "grantByDefault": true,
+                        "systemdSlice": ""
+                    }
+                },
+                {
+                    "conf_set": {
+                        "allowDemo": true,
+                        "cgiProcReusable": true,
+                        "grantByDefault": true,
+                        "systemdSlice": ""
+                    }
+                }
+            ]
+        },
+        "minVersion": 1,
+        "priority": 0,
+        "priorityAdj": 0,
+        "runAs": "system",
+        "socket": "",
+        "socketConnTimeout": 600
+    },
+    "SYNO.Core.Storage.iSCSILUN": {
+        "allowUser": [
+            "admin.local",
+            "admin.ldap",
+            "admin.domain"
+        ],
+        "appPriv": "",
+        "authLevel": 1,
+        "disableSocket": false,
+        "lib": "StorageManager/libStorage.so",
+        "maxVersion": 1,
+        "methods": {
+            "1": [
+                {
+                    "repair": {
+                        "allowDemo": true,
+                        "cgiProcReusable": true,
+                        "grantByDefault": true,
+                        "systemdSlice": ""
+                    }
+                },
+                {
+                    "expand_unallocated": {
+                        "allowDemo": true,
+                        "cgiProcReusable": true,
+                        "grantByDefault": true,
+                        "systemdSlice": ""
+                    }
+                },
+                {
+                    "migrate": {
+                        "allowDemo": true,
+                        "cgiProcReusable": true,
+                        "grantByDefault": true,
+                        "systemdSlice": ""
+                    }
+                },
+                {
+                    "data_scrubbing": {
+                        "allowDemo": true,
+                        "cgiProcReusable": true,
+                        "grantByDefault": true,
+                        "systemdSlice": ""
+                    }
+                },
+                {
+                    "expand_by_add_disk": {
+                        "allowDemo": true,
+                        "cgiProcReusable": true,
+                        "grantByDefault": true,
+                        "systemdSlice": ""
+                    }
+                },
+                {
+                    "cancel_data_scrubbing": {
+                        "allowDemo": true,
+                        "cgiProcReusable": true,
+                        "grantByDefault": true,
+                        "systemdSlice": ""
+                    }
+                },
+                {
+                    "pause_data_scrubbing": {
+                        "allowDemo": true,
+                        "cgiProcReusable": true,
+                        "grantByDefault": true,
+                        "systemdSlice": ""
+                    }
+                },
+                {
+                    "estimate_size": {
+                        "allowDemo": true,
+                        "cgiProcReusable": true,
+                        "grantByDefault": true,
+                        "systemdSlice": ""
+                    }
+                },
+                {
+                    "delete_block_lun": {
+                        "allowDemo": true,
+                        "cgiProcReusable": true,
+                        "grantByDefault": true,
+                        "systemdSlice": ""
+                    }
+                }
+            ]
+        },
+        "minVersion": 1,
+        "priority": 0,
+        "priorityAdj": 0,
+        "runAs": "system",
+        "socket": "",
+        "socketConnTimeout": 600
+    }
+}

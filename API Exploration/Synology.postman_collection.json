@@ -1,0 +1,821 @@
+{
+	"info": {
+		"_postman_id": "bd2401ab-bc3c-46b8-bbff-41411082a196",
+		"name": "Synology",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1945371"
+	},
+	"item": [
+		{
+			"name": "Get Session",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.collectionVariables.set(\"session-cookie\", pm.response.headers.get(\"Set-Cookie\"));\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{fqdn}}:5001/webapi/auth.cgi?api=SYNO.API.Auth&version=3&method=login&account={{username}}&passwd={{passwd}}&session=FileStation&format=cookie",
+					"protocol": "https",
+					"host": [
+						"{{fqdn}}"
+					],
+					"port": "5001",
+					"path": [
+						"webapi",
+						"auth.cgi"
+					],
+					"query": [
+						{
+							"key": "api",
+							"value": "SYNO.API.Auth"
+						},
+						{
+							"key": "version",
+							"value": "3"
+						},
+						{
+							"key": "method",
+							"value": "login"
+						},
+						{
+							"key": "account",
+							"value": "{{username}}"
+						},
+						{
+							"key": "passwd",
+							"value": "{{passwd}}"
+						},
+						{
+							"key": "session",
+							"value": "FileStation"
+						},
+						{
+							"key": "format",
+							"value": "cookie"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Utilization",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "id",
+						"value": "{{session-cookie}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{fqdn}}:5001/webapi/entry.cgi?api=SYNO.Core.System.Utilization&version=1&method=get&type=lun&offset=1",
+					"protocol": "https",
+					"host": [
+						"{{fqdn}}"
+					],
+					"port": "5001",
+					"path": [
+						"webapi",
+						"entry.cgi"
+					],
+					"query": [
+						{
+							"key": "api",
+							"value": "SYNO.Core.System.Utilization"
+						},
+						{
+							"key": "version",
+							"value": "1"
+						},
+						{
+							"key": "method",
+							"value": "get"
+						},
+						{
+							"key": "type",
+							"value": "lun"
+						},
+						{
+							"key": "offset",
+							"value": "1"
+						},
+						{
+							"key": "additional",
+							"value": "volume_status",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get System Info",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "id",
+						"value": "{{session-cookie}}"
+					}
+				],
+				"url": {
+					"raw": "https://{{fqdn}}:5001/webapi/entry.cgi?api=SYNO.Core.System&version=3&method=info",
+					"protocol": "https",
+					"host": [
+						"{{fqdn}}"
+					],
+					"port": "5001",
+					"path": [
+						"webapi",
+						"entry.cgi"
+					],
+					"query": [
+						{
+							"key": "api",
+							"value": "SYNO.Core.System"
+						},
+						{
+							"key": "version",
+							"value": "3"
+						},
+						{
+							"key": "method",
+							"value": "info"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Storage Volume",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "id",
+						"value": "{{session-cookie}}"
+					}
+				],
+				"url": {
+					"raw": "https://{{fqdn}}:5001/webapi/entry.cgi?api=SYNO.Core.Storage.Volume&version=1&method=get&volume_path=/volume1",
+					"protocol": "https",
+					"host": [
+						"{{fqdn}}"
+					],
+					"port": "5001",
+					"path": [
+						"webapi",
+						"entry.cgi"
+					],
+					"query": [
+						{
+							"key": "api",
+							"value": "SYNO.Core.Storage.Volume"
+						},
+						{
+							"key": "version",
+							"value": "1"
+						},
+						{
+							"key": "method",
+							"value": "get"
+						},
+						{
+							"key": "volume_path",
+							"value": "/volume1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Volumes",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "id",
+						"value": "{{session-cookie}}"
+					}
+				],
+				"url": {
+					"raw": "https://{{fqdn}}:5001/webapi/entry.cgi?api=SYNO.Core.Storage.Volume&version=1&method=list&location=internal&limit=-1&offset=0",
+					"protocol": "https",
+					"host": [
+						"{{fqdn}}"
+					],
+					"port": "5001",
+					"path": [
+						"webapi",
+						"entry.cgi"
+					],
+					"query": [
+						{
+							"key": "api",
+							"value": "SYNO.Core.Storage.Volume"
+						},
+						{
+							"key": "version",
+							"value": "1"
+						},
+						{
+							"key": "method",
+							"value": "list"
+						},
+						{
+							"key": "location",
+							"value": "internal"
+						},
+						{
+							"key": "limit",
+							"value": "-1"
+						},
+						{
+							"key": "offset",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Disks",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "id",
+						"value": "{{session-cookie}}"
+					}
+				],
+				"url": {
+					"raw": "https://{{fqdn}}:5001/webapi/entry.cgi?api=SYNO.Core.Storage.Disk&version=1&method=list&location=internal&limit=-1&offset=0",
+					"protocol": "https",
+					"host": [
+						"{{fqdn}}"
+					],
+					"port": "5001",
+					"path": [
+						"webapi",
+						"entry.cgi"
+					],
+					"query": [
+						{
+							"key": "api",
+							"value": "SYNO.Core.Storage.Disk"
+						},
+						{
+							"key": "version",
+							"value": "1"
+						},
+						{
+							"key": "method",
+							"value": "list"
+						},
+						{
+							"key": "location",
+							"value": "internal"
+						},
+						{
+							"key": "limit",
+							"value": "-1"
+						},
+						{
+							"key": "offset",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get iSCSI LUN",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "id",
+						"value": "{{session-cookie}}"
+					}
+				],
+				"url": {
+					"raw": "https://{{fqdn}}:5001/webapi/entry.cgi?api=SYNO.Core.ISCSI.LUN&version=1&method=list",
+					"protocol": "https",
+					"host": [
+						"{{fqdn}}"
+					],
+					"port": "5001",
+					"path": [
+						"webapi",
+						"entry.cgi"
+					],
+					"query": [
+						{
+							"key": "api",
+							"value": "SYNO.Core.ISCSI.LUN"
+						},
+						{
+							"key": "version",
+							"value": "1"
+						},
+						{
+							"key": "method",
+							"value": "list"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Query API",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "id",
+						"value": "{{session-cookie}}"
+					}
+				],
+				"url": {
+					"raw": "https://{{fqdn}}:5001/webapi/entry.cgi?api=SYNO.API.Info&version=1&method=query&query=SYNO.Core.Storage.Volume",
+					"protocol": "https",
+					"host": [
+						"{{fqdn}}"
+					],
+					"port": "5001",
+					"path": [
+						"webapi",
+						"entry.cgi"
+					],
+					"query": [
+						{
+							"key": "api",
+							"value": "SYNO.API.Info"
+						},
+						{
+							"key": "version",
+							"value": "1"
+						},
+						{
+							"key": "method",
+							"value": "query"
+						},
+						{
+							"key": "query",
+							"value": "SYNO.Core.Storage.Volume"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Working Query",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "id",
+						"value": "{{session-cookie}}"
+					}
+				],
+				"url": {
+					"raw": "https://{{fqdn}}:5001/webapi/entry.cgi?api=SYNO.FileStation.List&method=list_share&version=2",
+					"protocol": "https",
+					"host": [
+						"{{fqdn}}"
+					],
+					"port": "5001",
+					"path": [
+						"webapi",
+						"entry.cgi"
+					],
+					"query": [
+						{
+							"key": "api",
+							"value": "SYNO.FileStation.List"
+						},
+						{
+							"key": "method",
+							"value": "list_share"
+						},
+						{
+							"key": "version",
+							"value": "2"
+						},
+						{
+							"key": "limit",
+							"value": "-1",
+							"disabled": true
+						},
+						{
+							"key": "offset",
+							"value": "0",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Shared Folders",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "id",
+						"value": "{{session-cookie}}"
+					}
+				],
+				"url": {
+					"raw": "https://{{fqdn}}:5001/webapi/entry.cgi?api=SYNO.FileStation.List&method=list_share&version=2&additional=volume_status",
+					"protocol": "https",
+					"host": [
+						"{{fqdn}}"
+					],
+					"port": "5001",
+					"path": [
+						"webapi",
+						"entry.cgi"
+					],
+					"query": [
+						{
+							"key": "api",
+							"value": "SYNO.FileStation.List"
+						},
+						{
+							"key": "method",
+							"value": "list_share"
+						},
+						{
+							"key": "version",
+							"value": "2"
+						},
+						{
+							"key": "additional",
+							"value": "volume_status"
+						},
+						{
+							"key": "additional",
+							"value": "mount_point_type",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get FileStation Info",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "id",
+						"value": "{{session-cookie}}"
+					}
+				],
+				"url": {
+					"raw": "https://{{fqdn}}:5001/webapi/entry.cgi?api=SYNO.FileStation.Info&method=get&version=2",
+					"protocol": "https",
+					"host": [
+						"{{fqdn}}"
+					],
+					"port": "5001",
+					"path": [
+						"webapi",
+						"entry.cgi"
+					],
+					"query": [
+						{
+							"key": "api",
+							"value": "SYNO.FileStation.Info"
+						},
+						{
+							"key": "method",
+							"value": "get"
+						},
+						{
+							"key": "version",
+							"value": "2"
+						},
+						{
+							"key": "limit",
+							"value": "-1",
+							"disabled": true
+						},
+						{
+							"key": "offset",
+							"value": "0",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get DSM Info",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "id",
+						"value": "{{session-cookie}}"
+					}
+				],
+				"url": {
+					"raw": "https://{{fqdn}}:5001/webapi/entry.cgi?api=SYNO.DSM.Info&method=getinfo&version=2",
+					"protocol": "https",
+					"host": [
+						"{{fqdn}}"
+					],
+					"port": "5001",
+					"path": [
+						"webapi",
+						"entry.cgi"
+					],
+					"query": [
+						{
+							"key": "api",
+							"value": "SYNO.DSM.Info"
+						},
+						{
+							"key": "method",
+							"value": "getinfo"
+						},
+						{
+							"key": "version",
+							"value": "2"
+						},
+						{
+							"key": "limit",
+							"value": "-1",
+							"disabled": true
+						},
+						{
+							"key": "offset",
+							"value": "0",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Storage Pools",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "id",
+						"value": "{{session-cookie}}"
+					}
+				],
+				"url": {
+					"raw": "https://{{fqdn}}:5001/webapi/entry.cgi?api=SYNO.Core.Storage.Pool&method=list&version=1&limit=-1&offset=0",
+					"protocol": "https",
+					"host": [
+						"{{fqdn}}"
+					],
+					"port": "5001",
+					"path": [
+						"webapi",
+						"entry.cgi"
+					],
+					"query": [
+						{
+							"key": "api",
+							"value": "SYNO.Core.Storage.Pool"
+						},
+						{
+							"key": "method",
+							"value": "list"
+						},
+						{
+							"key": "version",
+							"value": "1"
+						},
+						{
+							"key": "limit",
+							"value": "-1"
+						},
+						{
+							"key": "offset",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get System Info",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "id",
+						"value": "{{session-cookie}}"
+					}
+				],
+				"url": {
+					"raw": "https://{{fqdn}}:5001/webapi/entry.cgi?api=SYNO.Core.System&version=3&method=info",
+					"protocol": "https",
+					"host": [
+						"{{fqdn}}"
+					],
+					"port": "5001",
+					"path": [
+						"webapi",
+						"entry.cgi"
+					],
+					"query": [
+						{
+							"key": "api",
+							"value": "SYNO.Core.System"
+						},
+						{
+							"key": "version",
+							"value": "3"
+						},
+						{
+							"key": "method",
+							"value": "info"
+						},
+						{
+							"key": "type",
+							"value": "network",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Network Info",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "id",
+						"value": "{{session-cookie}}"
+					}
+				],
+				"url": {
+					"raw": "https://{{fqdn}}:5001/webapi/entry.cgi?api=SYNO.Core.System&version=1&method=info&type=network",
+					"protocol": "https",
+					"host": [
+						"{{fqdn}}"
+					],
+					"port": "5001",
+					"path": [
+						"webapi",
+						"entry.cgi"
+					],
+					"query": [
+						{
+							"key": "api",
+							"value": "SYNO.Core.System"
+						},
+						{
+							"key": "version",
+							"value": "1"
+						},
+						{
+							"key": "method",
+							"value": "info"
+						},
+						{
+							"key": "type",
+							"value": "network"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Storage Info",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "id",
+						"value": "{{session-cookie}}"
+					}
+				],
+				"url": {
+					"raw": "https://{{fqdn}}:5001/webapi/entry.cgi?api=SYNO.Core.System&version=1&method=info&type=storage",
+					"protocol": "https",
+					"host": [
+						"{{fqdn}}"
+					],
+					"port": "5001",
+					"path": [
+						"webapi",
+						"entry.cgi"
+					],
+					"query": [
+						{
+							"key": "api",
+							"value": "SYNO.Core.System"
+						},
+						{
+							"key": "version",
+							"value": "1"
+						},
+						{
+							"key": "method",
+							"value": "info"
+						},
+						{
+							"key": "type",
+							"value": "storage"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "session-cookie",
+			"value": ""
+		}
+	]
+}

@@ -1,0 +1,11 @@
+Pages with Useful Info
+https://github.com/florianmueller/php-synology-web-API-call-script/blob/master/assets/php/request.SYNO.Core.System.Storage.php
+https://github.com/openstack/cinder/blob/8da01f896bd0d940f1f50b61177500946b9499b5/cinder/volume/drivers/synology/synology_common.py#L470
+https://github.com/bnzbnz/Syno4Delphi/blob/fe085768be566509aa7449136293bbef309f32ac/source/uSyno.Core.Types.pas#L116
+https://kb.synology.com/en-us/DG/DSM_Login_Web_API_Guide/2
+https://github.com/matthiasbock/python-synology-dsm/blob/master/synology/filestation.py
+https://github.com/florianmueller/php-synology-web-API-call-script/blob/master/assets/php/request.SYNO.Core.System.Network.php
+
+
+Lucid Chart Documentation:
+https://lucid.app/lucidchart/12613644-3c20-419f-abce-dbd2f1d703f8/edit?view_items=qJ40PLCIeaqZ&invitationId=inv_63c3b741-212e-4a37-bdab-42b21ab1607f

@@ -1,0 +1,72 @@
+{
+    "SYNO.Core.Promotion.Info": {
+        "allowUser": [
+            "admin.local",
+            "admin.domain",
+            "admin.ldap",
+            "normal.local",
+            "normal.domain",
+            "normal.ldap"
+        ],
+        "appPriv": "",
+        "authLevel": 1,
+        "disableSocket": false,
+        "lib": "lib/SYNO.Core.Promotion.so",
+        "maxVersion": 1,
+        "methods": {
+            "1": [
+                {
+                    "is_AMFA_enabled": {
+                        "cgiProcReusable": true,
+                        "grantByUser": false,
+                        "grantable": true,
+                        "systemdSlice": ""
+                    }
+                },
+                {
+                    "hide_promotion": {
+                        "allowTimeout": true,
+                        "cgiProcReusable": true,
+                        "grantByDefault": true,
+                        "systemdSlice": ""
+                    }
+                },
+                {
+                    "get_old_patch": {
+                        "allowTimeout": true,
+                        "cgiProcReusable": true,
+                        "grantByDefault": true,
+                        "systemdSlice": ""
+                    }
+                },
+                {
+                    "is_2FA_enabled": {
+                        "allowTimeout": true,
+                        "cgiProcReusable": true,
+                        "grantByDefault": true,
+                        "systemdSlice": ""
+                    }
+                }
+            ]
+        },
+        "minVersion": 1,
+        "priority": 0,
+        "priorityAdj": 0,
+        "socket": "",
+        "socketConnTimeout": 600
+    },
+    "SYNO.Default.API": {
+        "allowUser": [],
+        "appPriv": "",
+        "authLevel": 1,
+        "disableSocket": false,
+        "lib": "",
+        "maxVersion": 1,
+        "methods": {},
+        "minVersion": 1,
+        "priority": 0,
+        "priorityAdj": 0,
+        "socket": "",
+        "socketConnTimeout": 600
+    }
+}
